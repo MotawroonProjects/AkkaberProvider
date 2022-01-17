@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.navigation.Navigation;
 
 import com.apps.akkaber_provider.R;
 import com.apps.akkaber_provider.databinding.FragmentContactUsBinding;
@@ -56,6 +57,8 @@ public class FragmentContactUs extends BaseFragment {
         fragmentContactusMvvm.onSendSuccess().observe(activity, isSuccess -> {
             if (isSuccess) {
                 Toast.makeText(activity, getString(R.string.suc), Toast.LENGTH_SHORT).show();
+                Navigation.findNavController(binding.getRoot()).popBackStack();
+
             }
         });
         model = new ContactUsModel();

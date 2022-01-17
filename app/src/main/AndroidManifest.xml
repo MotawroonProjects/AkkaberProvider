@@ -28,13 +28,18 @@
 
         <activity
             android:name="com.apps.akkaber_provider.uis.activity_sign_up.SignUpActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"
+            />
 
 
 
         <activity
             android:name="com.apps.akkaber_provider.uis.activity_login.LoginActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"
+
+            />
 
         <activity
             android:name="com.apps.akkaber_provider.uis.activity_notification.NotificationActivity"
