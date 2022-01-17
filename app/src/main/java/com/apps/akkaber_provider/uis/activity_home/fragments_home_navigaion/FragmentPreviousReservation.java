@@ -24,6 +24,8 @@ import com.apps.akkaber_provider.mvvm.FragmentPreviousOrderMvvm;
 import com.apps.akkaber_provider.uis.activity_base.BaseFragment;
 import com.apps.akkaber_provider.uis.activity_home.HomeActivity;
 
+import java.util.ArrayList;
+
 
 public class FragmentPreviousReservation extends BaseFragment {
     private FragmentPreviousReservationBinding binding;
@@ -66,8 +68,13 @@ public class FragmentPreviousReservation extends BaseFragment {
             }
         });
         fragmentPreviousOrderMvvm.onOrderDataSuccess().observe(activity, dataList -> {
-            if (adapter != null && dataList != null) {
+            if (adapter != null && dataList != null&&dataList.size()>0) {
                 adapter.updateList(dataList);
+            }
+            else{
+                adapter.updateList(new ArrayList<>());
+                binding.llNoData.setVisibility(View.VISIBLE);
+
             }
         });
         fragmentPreviousOrderMvvm.setFilterBy(null);
