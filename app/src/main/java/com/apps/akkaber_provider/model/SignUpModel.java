@@ -96,7 +96,7 @@ public class SignUpModel extends BaseObservable {
 
     public SignUpModel() {
         username = "";
-        phone_code = "20";
+        phone_code = "971";
         phone = "";
         identification = "";
         vehicle_id = "";
